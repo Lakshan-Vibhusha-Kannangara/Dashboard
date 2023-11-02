@@ -1,0 +1,46 @@
+<div class="div">
+  <app-search
+    [searchResults]="searchResults"
+    [placeHolder]="'Search Schools'"
+    [searchQuery]="searchQuery"
+    (search)="onSearch($event)"
+    (select)="onSelect($event)"
+    tag1="schoolID"
+    tag2="schoolName"
+  ></app-search>
+</div>
+<main class="main-body" *ngIf="schoolData.schoolName!=''">
+  <h2 style="margin-left: 1vw">Basic School Data</h2>
+  <main class="container-fluid">
+    <!--Row 2-->
+    <div class="row g-2 mb-6">
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-card
+          [itemName]="'School'"
+          [itemInfo]="this.schoolData.schoolName"
+          [icon]="'bi bi-house'"
+          [color]="'blue'"
+        ></app-card>
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-card
+          [itemName]="'School'"
+          [itemInfo]="this.schoolData.studentCount.toString()"
+          [icon]="'bi bi-house'"
+          [color]="'sienna'"
+        ></app-card>
+      </div>
+    </div>
+
+    <app-class-cards [classrooms]="schoolData.classInfos"></app-class-cards>
+
+    <br />
+    <br />
+  </main>
+
+  <div class="row">
+    <app-student-table [students]="schoolData.studentInfos"></app-student-table>
+  </div>
+</main>
+
+<app-select-empty *ngIf="schoolData.schoolName==''"></app-select-empty>

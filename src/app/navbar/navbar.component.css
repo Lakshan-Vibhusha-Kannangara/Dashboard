@@ -1,0 +1,250 @@
+.navbar{
+    z-index: 1;
+    position: fixed;
+    width: auto;
+}
+
+#navbarVertical {
+    background-color: transparent;
+}
+
+/* Reset default margins and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set the background for the HTML and body elements */
+  html {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-image: url(http://bit.ly/2gPLxZ4);
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* Create a blurred box */
+  .blurred-box {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    top: calc(50% - 175px);
+    left: calc(50% - 125px);
+    background: inherit;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .blurred-box:after {
+    content: '';
+    width: 300px;
+    height: 300px;
+    background: inherit;
+    position: absolute;
+    left: -25px;
+    right: 0;
+    top: -25px;
+    bottom: 0;
+    box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.05);
+    filter: blur(10px);
+  }
+  
+  /* Styles for the user login box (you mentioned it's not needed) */
+  
+ .user-login-box {
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .user-login-box > * {
+    display: inline-block;
+    width: 200px;
+  }
+  
+  .user-icon {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    background-size: contain;
+    background-image: url(https://pbs.twimg.com/profile_images/725321660484583424/ArQ4fM3k.jpg);
+  }
+  
+  .user-name {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+  }
+  
+  input.user-password {
+    width: 120px;
+    height: 18px;
+    opacity: 0.4;
+    border-radius: 2px;
+    padding: 5px 15px;
+    border: 0;
+  }
+  /* Add this CSS to your stylesheet or within a <style> tag in the HTML document */
+
+.user-avatar {
+    width: 100px;
+    height: 100px; /* To make the avatar a perfect circle, set the height and width the same */
+    border: 3px solid #fff; /* Add a white border around the avatar */
+}
+
+.user-name {
+    position: relative;
+    left: 2vh;
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #240202; /* Change the text color */
+}
+
+.user-link {
+    text-decoration: none;
+    color: #007BFF; /* Change link color to a stylish blue color */
+    font-weight: bold; /* Make the link text bold */
+    margin: 10px; /* Add some margin between the links */
+}
+
+.user-link:hover {
+    color: #0056b3; /* Change link color on hover */
+}
+
+
+
+
+/* Mixin */
+@createBox($width, $height, $radius, $background, $shadow) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  background-color: $background;
+  box-shadow: $shadow;
+}
+
+/* Body Styles */
+body {
+  background-color: #E6E6E6;
+  font-family: Roboto, sans-serif;
+}
+
+/* Container Styles */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 97vh;
+}
+
+/* Box Styles */
+.box {
+  position: relative;
+  @createBox($box_width, $box_height, $box_bRadius, $box_background, $box_shadow);
+}
+
+/* Top Section Styles */
+.top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+}
+
+/* Profile Styles */
+.profile {
+  width: 80px;
+  height: 80px;
+  border: 4px solid white;
+  border-radius: 45%;
+  background-image: url("https://cdn.dribbble.com/users/16041/avatars/small/e6c7fac4033b9c233a3bd82ce55c4430.jpg");
+}
+
+/* Title Styles */
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Job Styles */
+.job {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Bottom Section Styles */
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 50%;
+  background-color: #50E3B3;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* Links Styles */
+.links ul {
+  text-align: center;
+}
+
+.links ul li {
+  padding: 5px;
+}
+
+.links ul a {
+  color: #50E3B3;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.links ul a:hover {
+  text-decoration: underline;
+}
+
+.links ul .green {
+  color: #50E3B3;
+  font-size: 15px;
+  padding-right: 5px;
+}
+
+/* Social Links Styles */
+.social-links ul {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 60px;
+}
+
+.social-links ul li {
+  padding: 10px;
+  font-size: 24px;
+}
+
+.social-links ul a {
+  color: #50E3B3;
+}
+.item-set{
+  margin: 0;
+  top: 0;
+  padding: 0;
+  position: relative;
+
+}

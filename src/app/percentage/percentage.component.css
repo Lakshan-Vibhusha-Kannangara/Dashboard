@@ -1,0 +1,78 @@
+
+.icon-container {
+    position: relative;
+    overflow: hidden;
+    width: 60px; /* Adjust the width and height as needed */
+    height: 60px;
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, #837979, #a98787);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container i {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: rgba(255, 255, 255, 0.5); /* Adjust the color and opacity of the icon */
+}
+.flex-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+  .single-chart {
+    width: 40%;
+    justify-content: space-around ;
+  }
+  
+  .circular-chart {
+    display: block;
+    margin: 0px auto;
+    max-width: 80%;
+    max-height: 250px;
+  }
+  
+  .circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+  }
+  
+  .circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+  }
+  
+  @keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+  
+  .circular-chart.orange .circle {
+    stroke: #ff9f00;
+  }
+  
+
+  
+
+  
+  .percentage {
+    fill: #666;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+  }
+  .l-bg-blue-dark {
+    background: linear-gradient(to right, #373b44, #4286f4) !important;
+    color: #fff;
+    border-radius: 10px;
+}
+.l-bg-orange-dark {
+  background: linear-gradient(to right, #e6830b, #ffba56) !important;
+  color: #fff;
+  border-radius: 10px;
+}

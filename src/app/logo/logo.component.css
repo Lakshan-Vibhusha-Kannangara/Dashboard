@@ -1,0 +1,20 @@
+@keyframes animate-steps {
+    0% {background-position: 0 0%; }
+    100% {background-position: 100% 0%; }
+  }
+  .bg {
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+   
+  }
+  
+  .book {
+    animation: animate-steps .25s steps(23) infinite;
+    background: url('https://dev.scorpiolam.com/book-flipping.png') no-repeat left top;
+    background-size:auto 100%;
+    height: 6vw;
+    width: 6vw;
+  }
+  

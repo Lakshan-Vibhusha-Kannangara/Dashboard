@@ -1,0 +1,25 @@
+<div class="search">
+  <header class="pt-6" style="border-bottom: transparent;">
+    <div class="container-fluid">
+      <div class="mb-npx">
+        <div class="input-group mb-4 border rounded-pill p-1" style="background-color: transparent;">
+          <input type="search" [placeholder]="placeHolder" [(ngModel)]="searchQuery" (input)="onSearch($event)" class="form-control bg-none border-0" style="background-color: transparent;">
+          <div class="input-group-append border-0">
+            <button type="button" class="btn btn-link text-success" (click)="onSearch($event)"><i class="fa fa-search"></i></button>
+          </div>
+       
+        </div>
+ 
+      </div>
+    </div>
+  </header>
+
+  <div class="list-group search-results full-width" *ngIf="showSuggestions">
+    <p>Search Results</p>
+
+    <a *ngFor="let suggestion of searchResults" class="list-group-item search-results list-group-item-action list-group-item-primary" (click)="selectSuggestion(suggestion)" class="list-group-item list-group-item-action list-group-item-primary" style="background: linear-gradient(135deg, #f9f9f9, #f5f5f5);border-radius: 2px;height: 1vh;">{{ suggestion[tag2] }}</a>
+    
+
+  
+  </div>
+</div>

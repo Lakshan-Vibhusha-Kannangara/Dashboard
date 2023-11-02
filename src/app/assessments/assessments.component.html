@@ -1,0 +1,33 @@
+<div class="table-responsive">
+    <table class="table table-hover table-nowrap">
+        <thead class="thead">
+            <tr>
+                <th scope="col">Assessment Name</th>
+                <th scope="col">Score</th>
+                <th scope="col">Total Questions</th>
+                <th scope="col">Correct Answer Percentage (Class)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of paginatedAssessmentScores">
+                <td>{{item.assessment_name}}</td>
+                <td>{{item.score}}</td>
+                <td>{{item.total_questions}}</td>
+                <td>{{item.correct_answer_percentage_class}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<div class="text-center">
+    <ul class="pagination justify-content-center"> <!-- Use justify-content-center class -->
+        <li class="page-item" [class.disabled]="currentPage === 1">
+            <a class="page-link" (click)="pageChanged(currentPage - 1)" >Previous</a>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === totalPages()">
+            <a class="page-link" (click)="pageChanged(currentPage + 1)">Next</a>
+        </li>
+    </ul>
+</div>
+<br>
+<br>

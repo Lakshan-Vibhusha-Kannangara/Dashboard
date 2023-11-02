@@ -1,0 +1,17 @@
+<div class="container dark-theme">
+    <h2 >Classrooms</h2>
+    <div class="row">
+      <div *ngFor="let classInfo of classrooms; let i = index" class="col-md-3">
+        <div class="overviewcard dark-card l-bg-orange-dark" >
+          <div class="overviewcard__icon dark-text">Class ID: {{ classInfo.classID }}</div>
+          <div class="overviewcard__info dark-text">{{ classInfo.className }}</div>
+        </div>
+        <br>
+      </div>
+
+      <div *ngIf="columnCount === 5 || (i === classrooms.length - 2)">
+      </div>
+      <div class="row">
+      </div>
+    </div>
+  </div>

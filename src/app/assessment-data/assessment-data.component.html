@@ -1,0 +1,78 @@
+<div class="div">
+  <app-search
+    [searchResults]="searchResults"
+    [placeHolder]="'Search Assessments'"
+    [searchQuery]="searchQuery"
+    (search)="onSearch($event)"
+    (select)="onSelect($event)"
+    tag1="areaID"
+    tag2="areaName"
+  ></app-search>
+</div>
+<main class="main-body" *ngIf="assessmentData.distinctCount != 0">
+  <h2 style="margin-left: 1vw">Basic Assessment Data</h2>
+  <div class="container-fluid">
+    <!-- Row 1 -->
+    <div class="row g-2 mb-6">
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-card
+          [itemName]="'Distinct Count'"
+          [itemInfo]="assessmentData.distinctCount.toString()"
+          [icon]="'bi bi-house'"
+          [color]="'sienna'"
+        ></app-card>
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-card
+          [itemName]="'Average Score'"
+          [itemInfo]="assessmentData.averageScore.toString()"
+          [icon]="'bi bi-person'"
+          [color]="'orange'"
+        ></app-card>
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-card
+          [itemName]="'Participant Count'"
+          [itemInfo]="assessmentData.participantCount.toString()"
+          [icon]="'bi bi-calendar'"
+          [color]="'aqua'"
+        ></app-card>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row g-2 mb-6">
+      <div class="col-xl-4 col-sm-6 col-12">
+
+        
+        <app-percentage
+        [itemName]="'Correct Percentage'"
+        [itemInfo]="
+          assessmentData.correctAnswerPercentagePerClass[0].correctAnswerPercentage.toString()
+        "
+        [icon]="'bi bi-files'"
+        [color]="'wheat'"
+        [percentage]=" assessmentData.correctAnswerPercentagePerClass[0].correctAnswerPercentage.toString()"
+       >
+     </app-percentage>
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-card
+          [itemName]="'Sydney Participants'"
+          [itemInfo]="assessmentData.sydneyParticipants.toString()"
+          [icon]="'bi bi-person'"
+          [color]="'green'"
+        ></app-card>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <app-chart [chartOptions]="chartOptions"></app-chart>
+      </div>
+    </div>
+  </div>
+</main>
+<app-select-empty *ngIf="assessmentData.distinctCount == 0"></app-select-empty>
+<br />
+<br />

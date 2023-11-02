@@ -1,0 +1,15 @@
+<div class="card shadow border-0" style="background: linear-gradient(135deg, #dedada, #bdbdbd);">
+    <div class="card-body card-icon card-icon-large l-bg-blue-dark">
+        <div class="row">
+            <div class="col">
+                <span class="h3 font-semibold text-muted text-sm d-block mb-2">{{ itemName }}</span>
+                <span class="h3 font-bold mb-0" style="color: #fff;">{{ itemInfo }}</span> <!-- Apply color to itemInfo -->
+            </div>
+            <div class="col-auto card-icon card-icon-large">
+                <div class="icon-container" [style.backgroundColor]="color" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <i class="{{ icon }}"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

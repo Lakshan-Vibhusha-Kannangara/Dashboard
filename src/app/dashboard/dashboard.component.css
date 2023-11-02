@@ -1,0 +1,47 @@
+/* Webpixels CSS */
+/* Utility and component-centric Design System based on Bootstrap for fast, responsive UI development */
+/* URL: https://github.com/webpixels/css */
+
+@import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css");
+
+
+
+.body{
+top: 0vh;
+position: relative;
+width: 100vw;
+height: 100vh;
+background:transparent; 
+}
+.div{
+    left: 15vw;
+    position: relative;
+    background:transparent; 
+}
+
+.col-2{
+left: 10vw;
+position: relative;
+}
+.main-body{
+    top: 0vh;
+    position: relative;
+    width: 80vw;
+    background: transparent; 
+}
+.col-1{
+    width: 8vw;
+    position: relative;
+    }
+    /* Add this to your CSS (e.g., in a separate stylesheet or within a style tag) */
+.gradient-background {
+    background:transparent; /* Adjust the colors as needed */
+  }
+  
+  .row{
+    height: 100vh;
+    position: relative;
+  }

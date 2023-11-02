@@ -1,0 +1,68 @@
+<div class="area">
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+<div class="login-box">
+  <h2>Learning Dashboard</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <p style="color: #717196">
+      Don't have an account?
+      <a routerLink="/signup" style="color: #24252c">Register here</a>
+    </p>
+  </form>
+  <form>
+    <div class="user-box">
+      <app-form-input
+        label="Email Address"
+        [control]="$any(this.loginForm.get('emailId'))"
+        placeholder="Email Address"
+        [required]="true"
+        [default]="'vibhusha@email.com'"
+        [icon]="'fa fa-envelope'"
+      ></app-form-input>
+    </div>
+    <div class="user-box">
+      <app-form-input
+        [type]="'password'"
+        label="Password"
+        [default]="'vibhusha'"
+        [control]="$any(this.loginForm.get('password'))"
+        placeholder="Password"
+        [required]="true"
+        [icon]="'fa fa-key'"
+      ></app-form-input>
+    </div >
+    <div class="spans" type="button" (click)="onClick()" *ngIf="!signingIn">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Sign In
+    </div>
+
+  </form>
+  <span></span>
+  <div class="container" *ngIf="signingIn && !completed">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-auto">
+        <div class="loading">
+          <p>Signing In</p>
+          <span><i></i><i></i></span>
+        </div>
+        <p *ngIf="!signingIn && completed">Signing-In successful</p>
+      </div>
+    </div>
+  </div>
+  
+</div>

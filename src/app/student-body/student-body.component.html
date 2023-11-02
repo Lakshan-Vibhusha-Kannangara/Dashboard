@@ -1,0 +1,85 @@
+<div class="div" >
+  <app-search [searchResults]="searchResults" [placeHolder]="'Search Student Data'" [searchQuery]="searchQuery" (search)="onSearch($event)" (select)="onSelect($event)" tag1="id" tag2="fullName"></app-search>
+</div>
+<main class="main-body" *ngIf="assessmentScore.assessmentScores[0]">
+<h2 style="margin-left: 1vw;">Basic Student Data</h2>
+  <div class="container-fluid">
+    <!--Row 2-->
+    <div class="row g-2 mb-6">
+      <div class="col-xl-4 col-sm-6 col-12">
+ 
+        <app-card
+          [itemName]="'School'"
+          [itemInfo]="this.assessmentScore.schoolName"
+          [icon]="'bi bi-house'"
+          [color]="'sienna'"
+        ></app-card>
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-card
+          [itemName]="'Classroom'"
+          [itemInfo]="this.assessmentScore.class[0]"
+          [icon]="'bi bi-person'"
+          [color]="'orange'"
+        ></app-card>
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-card
+          [itemName]="'Year Level'"
+          [itemInfo]="this.assessmentScore.yearLevel.toString()"
+          [icon]="'bi bi-calendar'"
+          [color]="'aqua'"
+        ></app-card>
+      </div>
+    </div>
+
+    <!--Row -->
+
+    <div class="row g-2 mb-6">
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-card
+          [itemName]="'Total Assessments'"
+          [itemInfo]="this.assessmentScore.totalQuestionsAttempted.toString()"
+          [icon]="'bi bi-files'"
+          [color]="'wheat'"
+        ></app-card>
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-percentage
+        [itemName]="'Sydney Percentage'"
+        [itemInfo]="this.assessmentScore.sydneyPercentage"
+        [icon]="'bi bi-person'"
+        [percentage]="this.assessmentScore.sydneyPercentage"
+        [color]="'sienna'">
+
+        </app-percentage>
+   
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+        <app-percentage
+        [itemName]="'Correct Answer Percentage'"
+        [itemInfo]="this.assessmentScore.correctAnswerPercentage"
+        [icon]="'bi bi-person'"
+        [color]="'blue'"
+        [percentage]="this.assessmentScore.correctAnswerPercentage"
+       >
+
+        </app-percentage>
+  
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <app-chart [chartOptions]="chartOptions"></app-chart>
+      </div>
+    </div>
+
+    <app-accordion-card [items]="assessmentScore.subject"></app-accordion-card>
+
+    <app-assessments
+      [assessmentScores]="this.assessmentScore.assessmentScores"
+    ></app-assessments>
+  </div>
+</main>
+<app-select-empty *ngIf="!assessmentScore.assessmentScores[0]"></app-select-empty>

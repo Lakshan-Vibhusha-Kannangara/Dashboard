@@ -1,0 +1,28 @@
+.search-results {
+    z-index: 1;
+    position: fixed;
+    width: 30vw;
+    left: 24vw;
+    height: 1vh;
+
+
+}
+.full-width {
+    width: 30vw;
+    height: 2vh;
+    background-color: transparent;
+
+  }
+
+  .search{
+    z-index: 1;
+    width: 50vw;
+    left: 20vw;
+    position: fixed;
+    background-color: transparent;
+  }
+  /* Style the dropdown container */
+.dropdown {
+  position: relative;
+}
+

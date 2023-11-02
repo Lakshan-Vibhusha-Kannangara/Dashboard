@@ -1,0 +1,25 @@
+<div class="row g-6 mb-6">
+<span></span>
+    <div >
+     
+        <div class="card shadow border-0">
+         
+            <div class="card-body">
+                <span></span>
+                <h2 class="mb-0">Subjects</h2>
+                <span></span>
+                <span></span>
+                <br>
+                <div class="row" *ngFor="let item of items">
+                    <div class="col" >
+             
+                        <app-accordion [item]="item"></app-accordion>
+                    </div>
+              
+                </div>
+        
+                
+            </div>
+        </div>
+    </div>
+</div>

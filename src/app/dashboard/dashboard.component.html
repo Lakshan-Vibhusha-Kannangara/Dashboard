@@ -1,0 +1,7 @@
+
+
+<div style="display: flex;">
+    <app-select-empty *ngIf="!this.data"></app-select-empty>
+    <div style="flex: 4;"><app-navbar></app-navbar></div>
+    <div style="flex: 8;"><router-outlet></router-outlet></div>
+  </div>

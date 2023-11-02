@@ -1,0 +1,68 @@
+<nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light" id="navbarVertical" style="width: 100vw; background: linear-gradient(to bottom right, #f8a3a4, #e2587c);">
+
+    <div class="container-fluid d-flex flex-column align-items-center">
+
+        <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Brand -->
+        <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0 text-center" href="#">
+            <app-logo></app-logo>
+            <br>
+            <h2 style="left: 0vw; position: relative;">Dashboard</h2>
+        </a>
+
+        <div class="collapse navbar-collapse" id="sidebarCollapse">
+            <ul class="navbar-nav flex-column justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="student-data">
+                        <i class="bi bi-house"></i> Student Data
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="assessment-data">
+                        <i class="bi bi-bar-chart"></i> Assessment Analytics
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class ="nav-link" routerLink="school-data">
+                        <i class="bi bi-chat"></i> School Info
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="csv-upload">
+                        <i class="bi bi-bookmarks"></i> Upload CSV
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mt-auto ms-5 mb-10 text-center">
+                <div class="navbar-nav justify-content-center">
+                    <div class="box">
+                        
+                        <div class="top">
+                      
+                            <img src="{{loginUser.avatar}}" class="rounded-circle mb-3 user-avatar" alt="Avatar" />
+                       
+                          <h2 class="title">{{loginUser.name}}</h2>
+                       
+                        </div>
+                      
+                    </div>
+                    <ul class="navbar-nav mb-0 justify-content-center">
+                        <li class="nav-item mb-0 item-set">
+                            <a class="nav-link user-link" href="#">
+                                <i class="bi bi-person-square"></i> Account
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link user-link" href="#">
+                                <i class="bi bi-box-arrow-left"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

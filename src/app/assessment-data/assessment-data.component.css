@@ -1,0 +1,11 @@
+.main-body{
+    top: 15vh;
+    position: relative;
+    width: 80vw;
+}
+
+.l-bg-orange-dark {
+    background: linear-gradient(to right, #e6830b, #ffba56) !important;
+    color: #fff;
+    border-radius: 10px;
+  }
