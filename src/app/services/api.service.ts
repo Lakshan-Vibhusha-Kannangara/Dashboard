@@ -21,7 +21,7 @@ postLogin(login: LoginUser): Observable<any> {
 postUser(register: SendUser): Observable<any> {
   return this.http.post(`${env.endpoint}/users`, register);
 }
-private apiUrl = 'http://localhost:5219/api'; // Replace with your API URL
+private apiUrl = `${env.endpoint}`; 
 
 
 
